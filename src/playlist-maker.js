@@ -319,6 +319,7 @@ export default function factory(player, initialList, initialIndex = 0) {
     }
 
     const src = playlist.player_.currentSrc() || '';
+    // test access
 
     // If there is a currentPlaylistItemId_, validate that it matches the
     // current source URL returned by the player. This is sufficient evidence
