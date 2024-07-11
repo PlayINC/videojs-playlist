@@ -319,7 +319,6 @@ export default function factory(player, initialList, initialIndex = 0) {
     }
 
     const src = playlist.player_.currentSrc() || '';
-    // test access
 
     // If there is a currentPlaylistItemId_, validate that it matches the
     // current source URL returned by the player. This is sufficient evidence
@@ -331,7 +330,7 @@ export default function factory(player, initialList, initialIndex = 0) {
       const item = list[indexInItemIds];
 
       // Found a match, this is our current index!
-      if (item && Array.isArray(item.sources) && indexInSources([item], src) > -1) {
+      if (item && Array.isArray(item.sources) && indexInSources([item], src.replace('https://stream.mux.com/', '')) > -1) {
         playlist.currentIndex_ = indexInItemIds;
         return playlist.currentIndex_;
       }
